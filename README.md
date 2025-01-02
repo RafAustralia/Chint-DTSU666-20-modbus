@@ -10,3 +10,5 @@ NOTE2:
 My chint meter is no longed attached to the inverter but it is attached and managed by the Logger1000a
 Logger has assigned it modbus number 5 and hence why this file is called modbus_sungrow_5.yaml, so I can easily identify what piece of hardware it relates to.
 Each one of you will need ot modify it to suit your setup.
+
+You will also need to add this to your secrets file.
