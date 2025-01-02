@@ -1,0 +1,432 @@
+#prepared for dtsu666-20 chint via modbus
+#file written by Rafal Tomaszewski
+# last update: 2024-07-31
+#
+# Note: This YAML file will only work with Home Assistant >= 2023.10
+
+modbus:
+  - name: Sungrow_CHINT
+    type: tcp
+    host: !secret sungrow_modbus_host_ip_5
+    port: !secret sungrow_modbus_port_5
+
+# from mr Xu - registers they use - as per email 20.09.24
+
+    sensors:
+      - name: Voltage AB chint666
+        unique_id: chint_voltage_ab_chint666
+        device_address: !secret sungrow_modbus_slave_5
+        address: 0x1100 # reg from sungrow HQ
+        input_type: holding
+        data_type: uint32
+        precision: 1
+        unit_of_measurement: V
+        device_class: Voltage
+        state_class: measurement
+        scale: 0.1
+        scan_interval: 10
+
+      - name: Voltage CB chint666
+        unique_id: chint_voltage_cb_chint666
+        device_address: !secret sungrow_modbus_slave_5
+        address: 0x1102 # reg from sungrow HQ
+        input_type: holding
+        data_type: uint32
+        precision: 1
+        unit_of_measurement: V
+        device_class: Voltage
+        state_class: measurement
+        scale: 0.1
+        scan_interval: 10
+
+      - name: Voltage CA chint666
+        unique_id: chint_voltage_ca_chint666
+        device_address: !secret sungrow_modbus_slave_5
+        address: 0x1104 # reg frm sugnrow HQ
+        input_type: holding
+        data_type: uint32
+        precision: 1
+        unit_of_measurement: V
+        device_class: Voltage
+        state_class: measurement
+        scale: 0.1
+        scan_interval: 10
+
+      - name: Voltage A chint666
+        unique_id: chint_voltage_a_chint666
+        device_address: !secret sungrow_modbus_slave_5
+        address: 0x1106 # reg from sungrow HQ
+        input_type: holding
+        data_type: uint32
+        precision: 1
+        unit_of_measurement: V
+        device_class: Voltage
+        state_class: measurement
+        scale: 0.1
+        scan_interval: 10
+
+      - name: Voltage B chint666
+        unique_id: chint_voltage_b_chint666
+        device_address: !secret sungrow_modbus_slave_5
+        address: 0x1108 # reg from sungrow HQ
+        input_type: holding
+        data_type: uint32
+        precision: 1
+        unit_of_measurement: V
+        device_class: Voltage
+        state_class: measurement
+        scale: 0.1
+        scan_interval: 10
+
+      - name: Voltage C chint666
+        unique_id: chint_voltage_c_chint666
+        device_address: !secret sungrow_modbus_slave_5
+        address: 0x110A # reg frm sugnrow HQ
+        input_type: holding
+        data_type: uint32
+        precision: 1
+        unit_of_measurement: V
+        device_class: Voltage
+        state_class: measurement
+        scale: 0.1
+        scan_interval: 10
+
+      - name: Current A chint666
+        unique_id: chint_current_a_chint666
+        device_address: !secret sungrow_modbus_slave_5
+        address: 0x110C # reg from sungrow HQ
+        input_type: holding
+        data_type: uint32
+        precision: 1
+        unit_of_measurement: A
+        device_class: Current
+        state_class: measurement
+        scale: 0.01
+        scan_interval: 10
+
+      - name: Current B chint666
+        unique_id: chint_current_b_chint666
+        device_address: !secret sungrow_modbus_slave_5
+        address: 0x110E # reg from sungrow HQ
+        input_type: holding
+        data_type: uint32
+        precision: 1
+        unit_of_measurement: A
+        device_class: Current
+        state_class: measurement
+        scale: 0.01
+        scan_interval: 10
+
+      - name: Current C chint666
+        unique_id: chint_current_c_chint666
+        device_address: !secret sungrow_modbus_slave_5
+        address: 0x1110 # reg from sungrow HQ
+        input_type: holding
+        data_type: uint32
+        precision: 1
+        unit_of_measurement: A
+        device_class: Current
+        state_class: measurement
+        scale: 0.01
+        scan_interval: 10
+
+      - name: Total Active Power chint666
+        unique_id: chint_total_active_power_chint666
+        device_address: !secret sungrow_modbus_slave_5
+        address: 0x1112 # reg 4118
+        input_type: holding
+        data_type: int32
+        precision: 1
+        unit_of_measurement: kW
+        device_class: Power
+        state_class: measurement
+        scale: 0.001
+        scan_interval: 10
+
+      - name: Active Power A chint666
+        unique_id: chint_active_power_a_chint666
+        device_address: !secret sungrow_modbus_slave_5
+        address: 0x1114 # reg from sungrow HQ
+        input_type: holding
+        data_type: int32
+        precision: 1
+        unit_of_measurement: kW
+        device_class: Power
+        state_class: measurement
+        scale: 0.001
+        scan_interval: 10
+
+      - name: Active Power B chint666
+        unique_id: chint_active_power_b_chint666
+        device_address: !secret sungrow_modbus_slave_5
+        address: 0x1116 # reg from sungrow HQ
+        input_type: holding
+        data_type: int32
+        precision: 1
+        unit_of_measurement: kW
+        device_class: Power
+        state_class: measurement
+        scale: 0.001
+        scan_interval: 10
+
+      - name: Active Power C chint666
+        unique_id: chint_active_power_c_chint666
+        device_address: !secret sungrow_modbus_slave_5
+        address: 0x1118 # reg from sungrow HQ
+        input_type: holding
+        data_type: int32
+        precision: 1
+        unit_of_measurement: kW
+        device_class: Power
+        state_class: measurement
+        scale: 0.001
+        scan_interval: 10
+
+      - name: Total Reactive Power chint666
+        unique_id: chint_total_reactive_power_chint666
+        device_address: !secret sungrow_modbus_slave_5
+        address: 0x111A # reg 4118
+        input_type: holding
+        data_type: int32
+        precision: 1
+        unit_of_measurement: kVar
+        device_class: Power
+        state_class: measurement
+        scale: 0.001
+        scan_interval: 10
+
+      - name: Reactive Power A chint666
+        unique_id: chint_reactive_power_a_chint666
+        device_address: !secret sungrow_modbus_slave_5
+        address: 0x111C # reg from sungrow HQ
+        input_type: holding
+        data_type: int32
+        precision: 1
+        unit_of_measurement: kVar
+        device_class: Power
+        state_class: measurement
+        scale: 0.001
+        scan_interval: 10
+
+      - name: Reactive Power B chint666
+        unique_id: chint_reactive_power_b_chint666
+        device_address: !secret sungrow_modbus_slave_5
+        address: 0x111E # reg from sungrow HQ
+        input_type: holding
+        data_type: int32
+        precision: 1
+        unit_of_measurement: kVar
+        device_class: Power
+        state_class: measurement
+        scale: 0.001
+        scan_interval: 10
+
+      - name: Reactive Power C chint666
+        unique_id: chint_reactive_power_c_chint666
+        device_address: !secret sungrow_modbus_slave_5
+        address: 0x1120 # reg from sungrow HQ
+        input_type: holding
+        data_type: int32
+        precision: 1
+        unit_of_measurement: kVar
+        device_class: Power
+        state_class: measurement
+        scale: 0.001
+        scan_interval: 10
+
+      - name: Total Apparent Power chint666
+        unique_id: chint_total_apparent_power_chint666
+        device_address: !secret sungrow_modbus_slave_5
+        address: 0x1122 # reg 4118
+        input_type: holding
+        data_type: uint32
+        precision: 1
+        unit_of_measurement: kVar
+        device_class: Power
+        state_class: measurement
+        scale: 0.001
+        scan_interval: 10
+
+      - name: Apparent Power A chint666
+        unique_id: chint_apparent_power_a_chint666
+        device_address: !secret sungrow_modbus_slave_5
+        address: 0x1124 # reg from sungrow HQ
+        input_type: holding
+        data_type: uint32
+        precision: 1
+        unit_of_measurement: kVar
+        device_class: Power
+        state_class: measurement
+        scale: 0.001
+        scan_interval: 10
+
+      - name: Apparent Power B chint666
+        unique_id: chint_apparent_power_b_chint666
+        device_address: !secret sungrow_modbus_slave_5
+        address: 0x1126 # reg from sungrow HQ
+        input_type: holding
+        data_type: uint32
+        precision: 1
+        unit_of_measurement: kVar
+        device_class: Power
+        state_class: measurement
+        scale: 0.001
+        scan_interval: 10
+
+      - name: Apparent Power C chint666
+        unique_id: chint_apparent_power_c_chint666
+        device_address: !secret sungrow_modbus_slave_5
+        address: 0x1128 # reg from sungrow HQ
+        input_type: holding
+        data_type: uint32
+        precision: 1
+        unit_of_measurement: kVar
+        device_class: Power
+        state_class: measurement
+        scale: 0.001
+        scan_interval: 10
+
+      - name: Total Power Factor chint666
+        unique_id: chint_total_power_factor_chint666
+        device_address: !secret sungrow_modbus_slave_5
+        address: 0x112A # reg from sungrow HQ
+        input_type: holding
+        data_type: int32
+        precision: 1
+        unit_of_measurement: "%"
+        device_class: power_factor
+        state_class: measurement
+        scale: 0.001
+        scan_interval: 10
+
+      - name: Total Power Factor A chint666
+        unique_id: chint_total_power_factor_a_chint666
+        device_address: !secret sungrow_modbus_slave_5
+        address: 0x112C # reg from sungrow HQ
+        input_type: holding
+        data_type: int32
+        precision: 1
+        unit_of_measurement: "%"
+        device_class: power_factor
+        state_class: measurement
+        scale: 0.001
+        scan_interval: 10
+
+      - name: Total Power Factor B chint666
+        unique_id: chint_total_power_factor_b_chint666
+        device_address: !secret sungrow_modbus_slave_5
+        address: 0x112E # reg from sungrow HQ
+        input_type: holding
+        data_type: int32
+        precision: 1
+        unit_of_measurement: "%"
+        device_class: power_factor
+        state_class: measurement
+        scale: 0.001
+        scan_interval: 10
+
+      - name: Total Power Factor C chint666
+        unique_id: chint_total_power_factor_c_chint666
+        device_address: !secret sungrow_modbus_slave_5
+        address: 0x1130 # reg from sungrow HQ
+        input_type: holding
+        data_type: int32
+        precision: 1
+        unit_of_measurement: "%"
+        device_class: power_factor
+        state_class: measurement
+        scale: 0.001
+        scan_interval: 10
+
+      - name: Frequency chint666
+        unique_id: chint_frequency_chint666
+        device_address: !secret sungrow_modbus_slave_5
+        address: 0x1144 # reg from sungrow HQ
+        input_type: holding
+        data_type: uint32
+        precision: 1
+        unit_of_measurement: "Hz"
+        device_class: Frequency
+        state_class: measurement
+        scale: 0.01
+        scan_interval: 10
+
+      - name: Current Total Electricity chint666
+        unique_id: chint_current_total_electricity_chint666
+        device_address: !secret sungrow_modbus_slave_5
+        address: 0x1200 # reg from sungrow HQ
+        input_type: holding
+        data_type: uint32
+        precision: 1
+        unit_of_measurement: kWh
+        device_class: Energy
+        state_class: measurement
+        scale: 0.01
+        scan_interval: 10
+
+      - name: Current Forward Active Total Electric Energy chint666
+        unique_id: chint_current_forward_active_total_electric_energy_chint666
+        device_address: !secret sungrow_modbus_slave_5
+        address: 0x1202 # reg from sungrow HQ
+        input_type: holding
+        data_type: uint32
+        precision: 1
+        unit_of_measurement: kWh
+        device_class: Energy
+        state_class: measurement
+        scale: 0.01
+        scan_interval: 10
+
+      - name: Current Reversing Active Total Electric Energy chint666
+        unique_id: chint_current_reversing_active_total_electric_energy_chint666
+        device_address: !secret sungrow_modbus_slave_5
+        address: 0x1204 # reg from sungrow HQ
+        input_type: holding
+        data_type: uint32
+        precision: 1
+        unit_of_measurement: kWh
+        device_class: Energy
+        state_class: measurement
+        scale: 0.01
+        scan_interval: 10
+
+      - name: Current Total Reactive Electric Energy chint666
+        unique_id: chint_current_total_reactive_electric_energy_chint666
+        device_address: !secret sungrow_modbus_slave_5
+        address: 0x1206 # reg from sungrow HQ
+        input_type: holding
+        data_type: uint32
+        precision: 1
+        unit_of_measurement: kVar
+        device_class: Energy
+        state_class: measurement
+        scale: 0.01
+        scan_interval: 10
+
+      - name: Current Forward Reactive Total Electric Energy chint666
+        unique_id: chint_current_forward_reactive_total_electric_energy_chint666
+        device_address: !secret sungrow_modbus_slave_5
+        address: 0x1208 # reg from sungrow HQ
+        input_type: holding
+        data_type: uint32
+        precision: 1
+        unit_of_measurement: kVar
+        device_class: Energy
+        state_class: measurement
+        scale: 0.01
+        scan_interval: 10
+
+      - name: Current Reversing Reactive Total Electric Energy chint666
+        unique_id: chint_current_reversing_reactive_total_electric_energy_chint666
+        device_address: !secret sungrow_modbus_slave_5
+        address: 0x120A # reg from sungrow HQ
+        input_type: holding
+        data_type: uint32
+        precision: 1
+        unit_of_measurement: kVar
+        device_class: Energy
+        state_class: measurement
+        scale: 0.01
+        scan_interval: 10
+
+# end of currently coded registers from Sungrow
