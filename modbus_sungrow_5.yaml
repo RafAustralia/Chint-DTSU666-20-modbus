@@ -133,7 +133,7 @@ modbus:
       - name: Total Active Power chint666
         unique_id: chint_total_active_power_chint666
         device_address: !secret sungrow_modbus_slave_5
-        address: 0x1112 # reg 4118
+        address: 0x1112 # reg from sungrow HQ
         input_type: holding
         data_type: int32
         precision: 1
@@ -185,7 +185,7 @@ modbus:
       - name: Total Reactive Power chint666
         unique_id: chint_total_reactive_power_chint666
         device_address: !secret sungrow_modbus_slave_5
-        address: 0x111A # reg 4118
+        address: 0x111A # reg from sungrow HQ
         input_type: holding
         data_type: int32
         precision: 1
@@ -237,7 +237,7 @@ modbus:
       - name: Total Apparent Power chint666
         unique_id: chint_total_apparent_power_chint666
         device_address: !secret sungrow_modbus_slave_5
-        address: 0x1122 # reg 4118
+        address: 0x1122 # reg from sungrow HQ
         input_type: holding
         data_type: uint32
         precision: 1
